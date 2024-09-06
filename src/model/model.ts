@@ -1,0 +1,15 @@
+export const initialData = {
+  date: "30 января 2024",
+  shift: "Смена 2",
+  master: "Мастер: Иванов И. И.",
+  place: "РПТКМ-120",
+  staff: "Персонал",
+  staffCount: "100500 человек",
+  comments: "Комментарий в 3-5 строчек, который тоже можно редактировать.",
+  equipment: "КТП 2000 321",
+  equipmentStatus: "Работает",
+  someNumber: "24",
+  someAbbreviation: "SPI 3432",
+  percentage: "98.4",
+  statusDesc: "Функционирует, но не бьет",
+};

@@ -1,0 +1,108 @@
+.table {
+  display: grid;
+  grid-template-columns: 250px 200px 250px 150px 250px 150px 250px;
+  grid-template-rows: repeat(4, 100px);
+}
+
+.cell {
+  display: flex;
+}
+
+input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+}
+
+input[name="statusDesc"] {
+  color: var(--red-color);
+}
+
+input[name="date"],
+input[name="place"],
+input[name="shift"],
+input[name="master"] {
+  background-color: #e3e3e3;
+}
+
+.date {
+  grid-column: 1/2;
+}
+
+.shift {
+  grid-column: 2/3;
+}
+
+.master {
+  grid-column: 3/7;
+}
+
+.place {
+  grid-column: 7/8;
+}
+
+.staff {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.staffCount {
+  grid-column: 2/6;
+  grid-row: 2/3;
+}
+
+textarea {
+  flex-grow: 1;
+  padding: 20px 15px;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  resize: none;
+}
+
+.comments {
+  display: flex;
+  align-content: stretch;
+  grid-column: 6/8;
+  grid-row: 2/5;
+}
+
+.equipment {
+  grid-column: 1/2;
+  grid-row: 3/5;
+}
+
+.equipmentStatus {
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
+
+.someNumber {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+
+.csomeAbbreviationell {
+  grid-column: 5/6;
+  grid-row: 3/4;
+}
+
+.percentage {
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.statusDesc {
+  grid-column: 3/6;
+  grid-row: 4/5;
+}
+
+.percentSymbol {
+  position: absolute;
+  top: 33%;
+  right: 60%;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+}
