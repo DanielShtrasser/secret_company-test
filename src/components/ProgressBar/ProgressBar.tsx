@@ -13,7 +13,8 @@ export default function ProgressBar({
   setRenew,
 }: IProgressBarProps) {
   const [time, setTime] = useState(seconds);
-  const barItemsCountRef = useRef("-".repeat(seconds).split("")).current;
+  const barItemsInitialAmtRef = useRef("-".repeat(seconds).split("")).current;
+  const barWidth = seconds ? `${seconds * 65}px` : "650px";
   const barRef = useRef<HTMLDivElement | null>(null);
 
   let intervalId = 0;
@@ -30,7 +31,7 @@ export default function ProgressBar({
   // этот код уменьшет количество barItem в bar
   useEffect(() => {
     intervalId = setInterval(() => {
-      barItemsCountRef.length && barItemsCountRef.pop();
+      barItemsInitialAmtRef.length && barItemsInitialAmtRef.pop();
       setTime((prev) => prev - 1);
     }, 1000);
 
@@ -41,8 +42,7 @@ export default function ProgressBar({
 
   // здесь устанавливается ширина ProgressBar. 65 это ширина span, взята из макета
   useEffect(() => {
-    if (barRef.current)
-      barRef.current.style.width = seconds ? `${seconds * 65}px` : "650px";
+    if (barRef.current) barRef.current.style.width = barWidth;
   }, []);
 
   return (
@@ -51,7 +51,7 @@ export default function ProgressBar({
         {`Отправка данных через ${time} секунд`}
       </p>
       <div ref={barRef} className={style.bar}>
-        {barItemsCountRef.map((_, i) => (
+        {barItemsInitialAmtRef.map((_, i) => (
           <span className={style.barItem} key={i}></span>
         ))}
       </div>

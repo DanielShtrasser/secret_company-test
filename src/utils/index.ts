@@ -22,6 +22,6 @@ export function validateInput(a: string, b: string) {
     // только числа и точки
     return /^[0-9.]+$/.test(b);
   } else {
-    return false;
+    return true;
   }
 }
